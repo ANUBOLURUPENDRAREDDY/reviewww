@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo 'Archiving artifacts...'
                 archiveArtifacts artifacts: "${BACKEND_DIR}/target/*.war", fingerprint: true
-                archiveArtifacts artifacts: "${FRONTEND_DIR}/build/**", fingerprint: true
+                archiveArtifacts artifacts: "${FRONTEND_DIR}/dist/**", fingerprint: true
             }
         }
 
