@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning repository...'
-                // This step is automatic in pipeline
+                // Git clone happens automatically in pipeline
             }
         }
 
@@ -36,7 +36,7 @@ pipeline {
         stage('Archive Artifacts') {
             steps {
                 echo 'Archiving artifacts...'
-                archiveArtifacts artifacts: "${BACKEND_DIR}/target/*.jar", fingerprint: true
+                archiveArtifacts artifacts: "${BACKEND_DIR}/target/*.war", fingerprint: true
                 archiveArtifacts artifacts: "${FRONTEND_DIR}/build/**", fingerprint: true
             }
         }
