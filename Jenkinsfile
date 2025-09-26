@@ -18,8 +18,8 @@ pipeline {
             steps {
                 dir("${FRONTEND_DIR}") {
                     echo 'Installing and building React app...'
-                    sh 'npm install'
-                    sh 'npm run build'
+                    bat 'npm install'
+                    bat 'npm run build'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 dir("${BACKEND_DIR}") {
                     echo 'Building Spring Boot app...'
-                    sh './mvnw clean package -DskipTests || mvn clean package -DskipTests'
+                    bat 'mvnw clean package -DskipTests || mvn clean package -DskipTests'
                 }
             }
         }
